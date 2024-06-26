@@ -1,0 +1,15 @@
+{
+  "name": "@aryamanpathak2003/wordwave",
+  "version": "2.0.0",
+  "description": "common folder containing zod types",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aryaman pathak",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.5.2",
+    "zod": "^3.23.8"
+  }
+}
