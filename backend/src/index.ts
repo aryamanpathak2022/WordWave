@@ -15,7 +15,10 @@ const app = new Hono<{
 }>()
 
 // routes
+app.post('/', async (c) => {
+  return c.text( "Hello, World!");
 
+});
 app.route("api/v1/user",userRouter);
 app.route("api/v1/blog",blogRouter);
 
