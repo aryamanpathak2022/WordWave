@@ -16,6 +16,7 @@ export const Blogs = () => {
                     <BlogSkeleton />
                     <BlogSkeleton />
                     <BlogSkeleton />
+                    <BlogSkeleton />
                 </div>
             </div>
         </div>
@@ -27,7 +28,8 @@ export const Blogs = () => {
             <div>
                 {blogs.map(blog => <BlogCard
                     id={blog.id}
-                    authorName={blog.author.name || "Anonymous"}
+                    // @ts-ignore
+                    authorName={blog.authorId || "Anonymous"}
                     title={blog.title}
                     content={blog.content}
                     publishedDate={"2nd Feb 2024"}

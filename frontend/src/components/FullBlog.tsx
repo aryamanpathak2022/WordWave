@@ -12,7 +12,7 @@ export const FullBlog = ({ blog }: {blog: Blog}) => {
                         {blog.title}
                     </div>
                     <div className="text-slate-500 pt-2">
-                        Post on 2nd December 2023
+                        Post on 2nd July 2023
                     </div>
                     <div className="pt-4">
                         {blog.content}
@@ -24,14 +24,14 @@ export const FullBlog = ({ blog }: {blog: Blog}) => {
                     </div>
                     <div className="flex w-full">
                         <div className="pr-4 flex flex-col justify-center">
-                            <Avatar size="big" name={blog.author.name || "Anonymous"} />
+                            <Avatar size="big" name={ "Anonymous"} />
                         </div>
                         <div>
                             <div className="text-xl font-bold">
-                                {blog.author.name || "Anonymous"}
+                                { "Anonymous"}
                             </div>
                             <div className="pt-2 text-slate-500">
-                                Random catch phrase about the author's ability to grab the user's attention
+                                Random catch phrase 
                             </div>
                         </div>
                     </div>  

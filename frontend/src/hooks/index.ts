@@ -17,13 +17,15 @@ export const useBlog = ({ id }: { id: string }) => {
     const [blog, setBlog] = useState<Blog>();
 
     useEffect(() => {
+
         axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
         })
             .then(response => {
-                setBlog(response.data.blog);
+                console.log((response.data));
+                setBlog(response.data);
                 setLoading(false);
             })
     }, [id])
@@ -39,12 +41,15 @@ export const useBlogs = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
     useEffect(() => {
+        console.log(localStorage.getItem("token"))
         axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
+
         })
             .then(response => {
+                console.log(response.data.blogs)
                 setBlogs(response.data.blogs);
                 setLoading(false);
             })

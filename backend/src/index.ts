@@ -5,6 +5,8 @@ import { sign,verify } from 'hono/jwt'
 import { env, getRuntimeKey } from 'hono/adapter'
 import { userRouter } from './routes/userRouter'
 import { blogRouter } from './routes/blogRouter'
+import { cors } from 'hono/cors'
+
 
 const app = new Hono<{  
   Bindings:
@@ -14,6 +16,7 @@ const app = new Hono<{
   }
 }>()
 
+app.use('/*', cors())
 // routes
 app.post('/', async (c) => {
   return c.text( "Hello, World!");
