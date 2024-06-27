@@ -1,6 +1,6 @@
 
 # WordWave 
-[LIVE DEMO](https://aryamanpathak2022.github.io/WordWave/#/signup)
+[LIVE DEMO](https://aryamanpathak2022.github.io/WordWave/#/component)
 
 ## Table of Contents
 
