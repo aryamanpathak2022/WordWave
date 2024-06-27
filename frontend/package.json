@@ -9,14 +9,15 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@aryamanpathak2003/wordwave": "^2.0.0",
     "axios": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.0"
+    "react-router-dom": "^6.24.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -34,5 +35,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   },
-  "homepage": "https://aryamanpathak2022.github.io/WordWave"
+  "homepage": "https://aryamanpathak2022.github.io/WordWave/#/component"
 }
