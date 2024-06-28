@@ -29,7 +29,7 @@ export const Blogs = () => {
                 {blogs.map(blog => <BlogCard
                     id={blog.id}
                     // @ts-ignore
-                    authorName={blog.authorId || "Anonymous"}
+                    authorName={blog.authorName || "Anonymous"}
                     title={blog.title}
                     content={blog.content}
                     publishedDate={"2nd Feb 2024"}

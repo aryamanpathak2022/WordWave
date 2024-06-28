@@ -9,7 +9,9 @@ export const blogRouter = new Hono<{
         JWT_SECRET: string;
     },
     Variables: {
-        userId: string
+        userId: string;
+		authorName: string;
+		id:string;
 
     }
 }>();
@@ -26,13 +28,29 @@ blogRouter.use(async (c, next) => {
 		c.status(401);
 		return c.json({ error: "unauthorized" });
 	}
+	const prisma = new PrismaClient({
+		datasourceUrl: c.env?.DATABASE_URL,
+	}).$extends(withAccelerate());
     // @ts-ignore
 	c.set('userId', payload.id);
-	await next()
+	const user = await prisma.user.findUnique({
+			where: {
+			// @ts-ignore
+		  id: payload.id,
+		},
+		select: {
+		  name: true, // Only select the "name" field
+		},
+	  });
+  
+	 // @ts-ignore
+	c.set('authorName', user.name);
+	await next();
 });
 
 blogRouter.post('/', async (c) => {
 	const userId = c.get('userId');
+	const authorName = c.get('authorName');
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL	,
 	}).$extends(withAccelerate());
@@ -43,7 +61,8 @@ blogRouter.post('/', async (c) => {
 		data: {
 			title: body.title,
 			content: body.content,
-			authorId: userId
+			authorId: userId,
+			authorName: authorName
 		}
 	});
 	return c.json({

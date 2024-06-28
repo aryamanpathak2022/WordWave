@@ -9,7 +9,9 @@ export interface Blog {
     "id": number
     "author": {
         "name": string
-    }
+    };
+    "authorName":string;
+
 }
 
 export const useBlog = ({ id }: { id: string }) => {
@@ -49,7 +51,7 @@ export const useBlogs = () => {
 
         })
             .then(response => {
-                console.log(response.data.blogs)
+                
                 setBlogs(response.data.blogs);
                 setLoading(false);
             })
