@@ -17,15 +17,14 @@ export default function Component() {
           <span className="text-xl font-bold ">WordWave</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Blog
+          <Link to="/signin" className="text-sm font-medium hover:underline underline-offset-4" >
+            Login
           </Link>
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            About
+          <Link to="/signup" className="text-sm font-medium hover:underline underline-offset-4" >
+            Sign up
           </Link>
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Contact
-          </Link>
+         
+      
         </nav>
       </header>
       <main className="flex-1">
@@ -44,7 +43,7 @@ export default function Component() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row hover:underline underline-offset-4    ">
                   <Link
-                    to="#"
+                    to="/blogs"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm bg-slate-100 font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-black "
                     
                   >
@@ -171,7 +170,7 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32">
+        <section id='contact' className="flex items-center justify-center w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Stay Connected with WordWave</h2>
