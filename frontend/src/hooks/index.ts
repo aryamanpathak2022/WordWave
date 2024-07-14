@@ -29,6 +29,7 @@ export const useBlog = ({ id }: { id: string }) => {
                 console.log((response.data));
                 setBlog(response.data);
                 setLoading(false);
+
             })
     }, [id])
 
@@ -41,6 +42,7 @@ export const useBlog = ({ id }: { id: string }) => {
 export const useBlogs = () => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState<Blog[]>([]);
+    // @ts-ignore
     const [login,setLogin]=useState(true);
 
     useEffect(() => {
